@@ -10,6 +10,18 @@ namespace employee_management.Data
             : base(options)
         {
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            foreach(var relationship in builder.Model.GetEntityTypes().SelectMany(e=>e.GetForeignKeys())) {
+                builder.Entity<LeaveApplication>()
+                        .HasOne(f => f.Status)
+                        .WithMany()
+                        .HasForeignKey(e => e.StatusId)
+                        .OnDelete(DeleteBehavior.NoAction);
+
+            }
+        }
 
         public DbSet<Employee> Employees { get;set; }
         public DbSet<Department> Departments { get;set; }
@@ -20,5 +32,6 @@ namespace employee_management.Data
         public DbSet<LeaveType> LeaveTypes { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<LeaveApplication> LeaveApplications { get; set; }
     }
 }
