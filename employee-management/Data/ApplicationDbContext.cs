@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using employee_management.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace employee_management.Data
@@ -9,5 +10,7 @@ namespace employee_management.Data
             : base(options)
         {
         }
+
+        public DbSet<Employee> Employees { get;set; }
     }
 }
