@@ -48,7 +48,7 @@ namespace employee_management.Controllers
         // GET: SystemCodeDetails/Create
         public IActionResult Create()
         {
-            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Id");
+            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Name");
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace employee_management.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Id", systemCodeDetail.SystemCodeId);
+            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Name", systemCodeDetail.SystemCodeId);
             return View(systemCodeDetail);
         }
 
@@ -84,7 +84,7 @@ namespace employee_management.Controllers
             {
                 return NotFound();
             }
-            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Id", systemCodeDetail.SystemCodeId);
+            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Name", systemCodeDetail.SystemCodeId);
             return View(systemCodeDetail);
         }
 
@@ -93,7 +93,7 @@ namespace employee_management.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SystemCodeId,Code,Description,OrderNo,CreatedById,CreatedOn,ModfiedById,ModifiedOn")] SystemCodeDetail systemCodeDetail)
+        public async Task<IActionResult> Edit(int id, SystemCodeDetail systemCodeDetail)
         {
             if (id != systemCodeDetail.Id)
             {
@@ -120,7 +120,7 @@ namespace employee_management.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Id", systemCodeDetail.SystemCodeId);
+            ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Name", systemCodeDetail.SystemCodeId);
             return View(systemCodeDetail);
         }
 

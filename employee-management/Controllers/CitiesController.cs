@@ -48,7 +48,7 @@ namespace employee_management.Controllers
         // GET: Cities/Create
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name");
             return View();
         }
 
@@ -67,7 +67,7 @@ namespace employee_management.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id", city.CountryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", city.CountryId);
             return View(city);
         }
 
@@ -84,7 +84,7 @@ namespace employee_management.Controllers
             {
                 return NotFound();
             }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id", city.CountryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", city.CountryId);
             return View(city);
         }
 
@@ -93,8 +93,10 @@ namespace employee_management.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Code,Name,CountryId,CreatedById,CreatedOn,ModfiedById,ModifiedOn")] City city)
+        public async Task<IActionResult> Edit(int id,  City city)
         {
+            city.ModfiedById = "admin";
+            city.ModifiedOn = DateTime.Now;
             if (id != city.Id)
             {
                 return NotFound();
@@ -120,7 +122,7 @@ namespace employee_management.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Id", city.CountryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", city.CountryId);
             return View(city);
         }
 
