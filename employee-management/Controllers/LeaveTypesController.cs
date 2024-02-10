@@ -56,8 +56,10 @@ namespace employee_management.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Code,Name,CreatedById,CreatedOn,ModfiedById,ModifiedOn")] LeaveType leaveType)
+        public async Task<IActionResult> Create( LeaveType leaveType)
         {
+            leaveType.CreatedById = "admin";
+            leaveType.CreatedOn = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(leaveType);

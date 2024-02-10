@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="~/AdminLTE/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="~/AdminLTE/plugins/summernote/summernote-bs4.min.css">
-  
+
     <!-- DataTables -->
     <link rel="stylesheet" href="~/AdminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="~/AdminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -181,7 +181,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="~/AdminLTE/dist/img/personnellogo.jpg" alt="Personnel Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                 <span class="brand-text font-weight-light">EMS </span>
+                <span class="brand-text font-weight-light">EMS </span>
             </a>
 
             <!-- Sidebar -->
@@ -196,7 +196,7 @@
                     </div>
                 </div>
 
-           
+
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
@@ -216,45 +216,45 @@
                             <a asp-area="" asp-controller="Employees" asp-action="index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Employees</p>
-                                
+
                             </a>
                         </li>
                         <!-- leave applications-->
 
-                           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Leave Applications
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pending Applications</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Approved Applications</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Leave Types</p>
-                </a>
-              </li>
-             @*  <li class="nav-item">
-                <a href="pages/charts/uplot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>uPlot</p>
-                </a>
-              </li> *@
-            </ul>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
+                                <p>
+                                    Leave Applications
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pending Applications</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Approved Applications</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Leavetypes" asp-action="index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Leave Types</p>
+                                    </a>
+                                </li>
+                                @*  <li class="nav-item">
+                                <a href="pages/charts/uplot.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>uPlot</p>
+                                </a>
+                                </li> *@
+                            </ul>
                             <!-- leave applications-->
                             <!-- System Administration-->
 
@@ -268,35 +268,53 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a asp-area="" asp-controller="Departments" asp-action="index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Departments</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Banks" asp-action="index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Banks</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Designations" asp-action="index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Designations</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a asp-area="" asp-controller="Countries" asp-action="index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Countries</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a asp-area="" asp-controller="Cities" asp-action="index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Cities</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a asp-area="" asp-controller="SystemCodes" asp-action="index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sysetm Codes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/uplot.html" class="nav-link">
+                                    <a asp-area="" asp-controller="SystemCodedetails" asp-action="index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>System Settings</p>
+                                        <p>System Code Details</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-     
-                 
-                        <!-- system Administation-->
+
+
+                    <!-- system Administation-->
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -306,27 +324,27 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-           @*  <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+            @*  <div class="content-header">
+            <div class="container-fluid">
+            <div class="row mb-2">
+            <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+            </div><!-- /.col -->
+            </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
             </div> *@
             <!-- /.content-header -->
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     @RenderBody()
-                   
+
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->

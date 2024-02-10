@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace employee_management.Models
 {
-    public class SystemCode
+    public class SystemCode:UserActivity
     {
         public int Id { get; set; }
         [MaxLength(50)]
