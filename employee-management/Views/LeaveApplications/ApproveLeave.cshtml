@@ -1,0 +1,164 @@
+﻿@model employee_management.Models.LeaveApplication
+
+@{
+    ViewData["Title"] = "Approve Leave Applications Details";
+}
+
+
+
+<<div class="card">
+    <form asp-action="ApproveLeave" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="card-header">
+            <h3 class="card-title">@ViewData["Title"]</h3>
+        </div>
+
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example12" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Employee)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Employee.FullName)
+                            @Html.DisplayFor(model=>model.Id)
+                        </td>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.NoOfDays)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.NoOfDays)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Startdate)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Startdate)
+                        </td>
+
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.EndDate)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.EndDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Duration)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Duration.Description)
+                        </td>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Leavetype)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Leavetype.Name)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Attachment)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Attachment)
+                        </td>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Description)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.Status.Description)
+                        </td>
+                        </tr>
+
+                        <tr>
+                        <th class="col-sm-3">
+                            @Html.DisplayNameFor(model => model.ApprovedById)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.ApprovedById)
+                        </td>
+                        <th class="col-sm-3">
+
+                            @Html.DisplayNameFor(model => model.ApprovedOn)
+                        </th>
+                        <td class="col-sm-3">
+                            @Html.DisplayFor(model => model.ApprovedOn)
+                        </td>
+                        <th></th>
+                    </tr>
+                </thead>
+                @*   <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Employee.FullName)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.NoOfDays)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Startdate)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Duration.Description)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Leavetype.Name)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Attachment)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Status.Description)
+                </td> *@
+                @*   <td>
+                @Html.DisplayFor(modelItem => item.ApprovedById)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.ApprovedOn)
+                </td> *@
+                @*
+                <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa fa-pen"></i> Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><i class="fa fa-eye"></i> Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                </td>
+                </tr>
+                }
+                </tbody>*@
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-footer">
+                    <div class="clearfix">
+                        <a asp-action="Index" class="btn btn-warning">Back to List</a>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Approve Leave application</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -61,12 +61,12 @@ namespace employee_management.Controllers
         {
             systemCodeDetail.CreatedById = "admin";
             systemCodeDetail.CreatedOn = DateTime.Now;
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _context.Add(systemCodeDetail);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            //}
             ViewData["SystemCodeId"] = new SelectList(_context.systemCodes, "Id", "Name", systemCodeDetail.SystemCodeId);
             return View(systemCodeDetail);
         }

@@ -18,7 +18,7 @@ namespace employee_management.Data
                         .HasOne(f => f.Status)
                         .WithMany()
                         .HasForeignKey(e => e.StatusId)
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.Cascade);
 
             }
         }
